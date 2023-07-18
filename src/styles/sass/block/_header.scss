@@ -1,0 +1,746 @@
+.header {
+  position: relative;
+  padding-top: 15px;
+  padding-bottom: 14px;
+
+  @media (max-width: $table-h) {
+    padding-top: 17px;
+    padding-bottom: 15px;
+  }
+  @media (max-width: $table) {
+    padding-bottom: 14px;
+    &__burger--menu {
+      grid-column-start: 1;
+      grid-column-end: 1 span;
+      order: 4;
+    }
+  }
+  @media (max-width: $table-m) {
+    padding-top: 15px;
+  }
+  @media (max-width: $mobile) {
+    padding-top: 9px;
+    padding-bottom: 5px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 143px;
+      z-index: -10;
+      width: 100%;
+      height: 50px;
+      border-top: 1px solid $gray-light;
+      border-bottom: 1px solid $gray-light;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    width: 100%;
+    height: 50px;
+    background: $gray-light;
+    @media (max-width: $table-h) {
+      top: 58px;
+    }
+    @media (max-width: $table-m) {
+      top: 0;
+      height: 50px;
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 32px 30px;
+    align-items: center;
+
+    @media (max-width: $table-h) {
+      grid-template-columns: repeat(9, 1fr);
+      grid-gap: 27px 30px;
+    }
+
+    @media (max-width: $table) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 27px 30px;
+    }
+
+    @media (max-width: $mobile) {
+      grid-gap: 15px 30px;
+    }
+  }
+
+  &__region {
+    display: flex;
+    grid-column-end: 2 span;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $table-h) {
+      grid-column-end: 4 span;
+      justify-content: flex-start;
+    }
+    @media (max-width: $table) {
+      grid-column-start: 1;
+      grid-column-end: 3 span;
+      order: 1;
+    }
+    @media (max-width: $mobile) {
+      grid-column-start: 1;
+      grid-column-end: 6 span;
+      order: 2;
+    }
+    .choices[data-type*=select-one] {
+      width: 48%;
+      @media (max-width: $table-h) {
+        width: 19%;
+        min-width: 88px;
+      }
+    }
+  }
+
+  &__phone {
+    position: relative;
+    grid-column-end: 2 span;
+    align-self: baseline;
+    font-size: 14px;
+    line-height: 100%;
+    color: $secondary;
+    outline: none;
+    transition: color $transition;
+
+    @media (max-width: $table-h) {
+      grid-column-end: 5 span;
+      justify-self: flex-end;
+    }
+
+    @media (max-width: $table) {
+      grid-column-start: 4;
+      grid-column-end: 3 span;
+      order: 2;
+    }
+
+    @media (max-width: $mobile) {
+      grid-column-start: 1;
+      grid-column-end: 6 span;
+      justify-self: start;
+      order: 3;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 1px;
+      z-index: -1;
+      width: 101%;
+      height: 105%;
+      background: $bone;
+      opacity: 0;
+      transition: opacity $transition;
+
+      @media (max-width: $table-h) {
+        width: 100%;
+      }
+    }
+
+    &:focus {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      color: $gold-light;
+
+      .phone__icon {
+        fill: $gold-light;
+      }
+    }
+
+    &:active {
+      color: $shade;
+
+      .phone__icon {
+        fill: $shade;
+      }
+    }
+  }
+
+  &__menu-top {
+    grid-column-start: 6;
+    grid-column-end: 7 span;
+    align-self: flex-start;
+    justify-self: flex-end;
+    width: 100%;
+    max-width: 710px;
+
+    @media (max-width: $table-h) {
+      grid-column-start: 1;
+      grid-column-end: 7 span;
+      justify-self: flex-start;
+      order: 3;
+      padding-top: 4px;
+    }
+
+    @media (max-width: $table) {
+      grid-column-start: 1;
+      grid-column-end: 6 span;
+      order: 3;
+      justify-self: auto;
+      margin-bottom: 17px;
+    }
+
+    @media (max-width: $table) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    grid-column-end: 2 span;
+    padding-top: 10px;
+    outline: none;
+    @media (max-width: $table-h) {
+      grid-column-start: 1;
+      grid-column-end: 2 span;
+      order: 5;
+      padding-top: 12px;
+    }
+    @media (max-width: $table) {
+      grid-column-start: 3;
+      grid-column-end: 2 span;
+      order: 5;
+      padding-top: 5px;
+    }
+    @media (max-width: $mobile) {
+      grid-column-start: 1;
+      grid-column-end: 6 span;
+      justify-self: center;
+      order: 1;
+      margin-bottom: 11px;
+      padding: 0;
+    }
+  }
+
+  &__img {
+    @media (max-width: $mobile) {
+      max-width: 187px;
+      width: 100%;
+    }
+  }
+
+  &__bottom-menu {
+    grid-column-start: 4;
+    grid-column-end: 9 span;
+    justify-self: flex-end;
+    padding-top: 10px;
+    width: 100%;
+    @media (max-width: $table-h) {
+      grid-column-start: 3;
+      grid-column-end: 7 span;
+      order: 6;
+      padding-top: 8px;
+      max-width: 700px;
+    }
+    @media (max-width: $table) {
+      position: absolute;
+      top: 108px;
+      left: 0;
+      z-index: 9;
+      width: 100%;
+      max-width: 100%;
+      height: 300px;
+      background: $white;
+      background-image: url("../images/elephant-grey.svg");
+      background-repeat: no-repeat;
+      background-position: right 72px top 129px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity $transition, visibility $transition;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    @media (max-width: $table-m) {
+      top: 128px;
+      background-image: none;
+      &.active {
+        height: auto;
+        max-height: none;
+      }
+    }
+    @media (max-width: $mobile) {
+      top: 144px;
+    }
+  }
+
+  &__forms {
+    position: relative;
+    display: grid;
+    grid-column-end: 10 span;
+    grid-template-columns: 72% 28%;
+    @media (max-width: $table-h) {
+      grid-column-end: 9 span;
+      grid-template-columns: 68.4% 31.6%;
+      order: 7;
+    }
+    @media (max-width: $table) {
+      grid-column-start: 1;
+      grid-column-end: 6 span;
+      grid-template-columns: 70% 30%;
+      order: 7;
+    }
+    @media (max-width: $table-m) {
+      grid-template-rows: 1fr;
+      grid-auto-rows: 1fr;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__form {
+    &:hover {
+      .header__search {
+        background: $md-gray;
+      }
+    }
+    @media (max-width: $table-m) {
+      position: relative;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 32px;
+    top: 33%;
+    z-index: 1;
+    fill: $gray;
+    outline: none;
+    transition: fill $transition;
+  }
+
+  &__search {
+    position: relative;
+    padding: 16px 32px 16px 56px;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 10px 0 0 10px;
+    background: $gray-light;
+    transition: background $transition, border $transition;
+
+    @media (max-width: $table-h) {
+      padding-top: 19px;
+    }
+    @media (max-width: $table-m) {
+      @include br10;
+    }
+    @media (max-width: $mobile) {
+  padding-top: 17px;
+  padding-bottom: 16px;
+}
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  &__btn {
+    grid-column-end: 2 span;
+    justify-self: flex-end;
+
+    @media (max-width: $table-h) {
+      grid-column-start: 8;
+      grid-column-end: 2 span;
+      order: 4;
+    }
+    @media (max-width: $table) {
+      grid-column-start: 5;
+      grid-column-end: 2 span;
+      order: 6;
+      margin-top: 3px;
+    }
+    @media (max-width: $mobile) {
+      grid-column-start: 4;
+      grid-column-end: 3 span;
+      margin-bottom: 10px;
+    }
+
+
+    &-search {
+      padding: 0;
+      background: transparent;
+      cursor: pointer;
+      position: absolute;
+      right: 31.3%;
+      top: 50%;
+      margin-top: -17px;
+      outline: none;
+
+      width: 32px;
+      height: 32px;
+      border: 2px solid $primary;
+      border-radius: 50%;
+      transition: border $transition, background $transition;
+      transition: border $transition, background $transition;
+
+      @media (max-width: $table-h) {
+        right: 34.9%;
+        margin-top: -15px;
+      }
+      @media (max-width: $table) {
+        right: 35.4%;
+      }
+      @media (max-width: $table-m) {
+        margin-top: -17px;
+        right: 10.8%;
+      }
+
+      &:hover {
+        background: $primary;
+
+        .header__btn-right::before {
+          border-color: $white;
+        }
+      }
+
+      &:focus {
+        background: $primary-light;
+
+        .header__btn-right::before {
+          border-color: $white;
+        }
+      }
+
+      &:active {
+        background: $primary-shade;
+        border-color: $primary-shade;
+
+        .header__btn-right::before {
+          border-color: $white;
+        }
+      }
+    }
+
+    &-right {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        top: -4px;
+        right: -2px;
+        border-left: 2px solid $primary;
+        border-bottom: 2px solid $primary;
+        transform: rotate(-135deg);
+        transition: border $transition;
+      }
+    }
+  }
+
+  &__profile,
+  &__cart {
+    border: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+
+    &:hover {
+      .header {
+        &__user,
+        &__cart-icon {
+          fill: $primary-light;
+        }
+      }
+    }
+
+    &:active {
+      .header {
+        &__user,
+        &__cart-icon {
+          fill: $primary-shade;
+        }
+      }
+    }
+
+    &:focus {
+      &:after {
+        opacity: 1;
+      }
+
+      .header {
+        &__user,
+        &__cart-icon {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  &__profile {
+    margin-right: 37px;
+
+    @media (max-width: $mobile) {
+      margin-right: 38px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      bottom: -4px;
+      left: -4px;
+      right: -4px;
+      z-index: -1;
+      background: $primary-light;
+      opacity: 0;
+      transition: opacity $transition;
+    }
+  }
+
+  &__cart {
+    &::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      bottom: -4px;
+      right: -4px;
+      left: -13px;
+      z-index: -1;
+      background: $primary-light;
+      opacity: 0;
+      transition: opacity $transition;
+    }
+  }
+
+  &__user,
+  &__cart-icon {
+    fill: $primary;
+    height: 28px;
+    transition: fill $transition;
+
+  }
+
+  &__user {
+    width: 28px;
+  }
+
+  &__cart {
+    &-sum {
+      position: absolute;
+      background: $secondary;
+      top: 6px;
+      left: -11px;
+      padding: 2px 4px;
+      border-radius: 50px;
+      font-size: 10px;
+      line-height: 10px;
+      align-items: center;
+      color: $white;
+    }
+
+    &-icon {
+      width: 30px;
+    }
+  }
+}
+
+.menu-top {
+  &__list {
+    @include listReset;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: auto;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  margin-left: -9px;
+  width: max-content;
+
+  @media (max-width: $mobile) {
+    margin: 0 0 10px;
+  }
+
+  &__icon {
+    fill: $secondary;
+    transition: fill $transition;
+  }
+}
+
+.burger-menu {
+  position: relative;
+  z-index: 10;
+  border: none;
+  color: $black;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+  width: 24px;
+  height: 24px;
+  outline: none;
+
+  @media (max-width: $table) {
+    display: block;
+    grid-column-start: 1;
+    order: 4;
+  }
+  @media (max-width: $table-m) {
+  margin-left: 5px;
+  margin-bottom: 11px;
+}
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $primary;
+    transition: transform $transition, top $transition;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $primary;
+    transition: transform $transition, bottom $transition;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 3px;
+    background: $primary;
+    transform: translateY(-50%);
+    transition: transform $transition;
+  }
+
+  &.active {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+      transition: transform $transition, top $transition;
+    }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+      transition: transform $transition, top $transition;
+    }
+
+    .burger-menu {
+      &__icon {
+        transform: scale(0);
+        transition: transform $transition;
+      }
+    }
+  }
+}
+
+.bottom-menu {
+  &__list {
+    @include listReset;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    @media (max-width: $table) {
+      flex-wrap: wrap;
+      -moz-column-gap: 64px;
+      column-gap: 64px;
+      height: 100%;
+      flex-direction: column;
+      align-content: flex-start;
+      gap: 41px 54px;
+      position: relative;
+      padding: 87px 72px 60px;
+    }
+    @media (max-width: $table-m) {
+      flex-wrap: nowrap;
+      max-height: 100%;
+      padding: 26px 12px;
+    }
+    @media (max-width: $mobile) {
+      padding-top: 56px;
+      padding-bottom: 42px;
+      height: 417px;
+      gap: 45px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: auto;
+      @media (max-width: $table-m) {
+        margin: 0;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-size: 16px;
+    line-height: 1;
+    color: $black;
+    outline: none;
+
+    transition: color $transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      right: -10px;
+      z-index: -1;
+      height: 105%;
+      background: $white-shade;
+      opacity: 0;
+      transition: opacity $transition;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+
+    &:focus {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}

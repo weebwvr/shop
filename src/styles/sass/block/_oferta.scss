@@ -1,0 +1,219 @@
+.oferta {
+  row-gap: 26px;
+  margin-bottom: 69px;
+  display: grid;
+  column-gap: 32px;
+  grid-template-columns: repeat(12, 1fr);
+
+  @media (max-width: $table-h) {
+    grid-template-columns: repeat(9, 1fr);
+  }
+
+  @media (max-width: $table) {
+    grid-template-columns: repeat(6, 1fr);
+    margin-bottom: 21px;
+  }
+
+  @media (max-width: $table-m) {
+    margin-bottom: 69px;
+  }
+
+  &__title {
+    margin: 0;
+    grid-column: 1 / 12;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1;
+    z-index: 2;
+    @media (max-width: $table-h) {
+      grid-column: 1/9;
+    }
+    @media (max-width: $table) {
+      grid-column: 1/6;
+      font-size: 32px;
+    }
+    @media (max-width: $table-m) {
+      font-size: 24px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    grid-column: 1 / 13;
+    margin-top: -58px;
+    padding-top: 58px;
+    padding-bottom: 0;
+    @media (max-width: $table-h) {
+      grid-column: 1/10;
+    }
+
+    @media (max-width: $table) {
+      grid-column: 1 / 7;
+      padding-bottom: 48px;
+    }
+
+    .swiper-button-prev {
+      width: 32px;
+      height: 32px;
+      bottom: auto;
+      top: 22px;
+      left: auto;
+      right: 45px;
+
+      @media (max-width: $table-m) {
+        left: calc(50% - 38px);
+        top: auto;
+        bottom: 0;
+      }
+
+      &::after {
+        content: "";
+      }
+    }
+
+    .swiper-button-next {
+      width: 32px;
+      height: 32px;
+      bottom: auto;
+      top: 22px;
+      right: 0;
+
+      @media (max-width: $table-m) {
+        right: calc(50% - 38px);
+        top: auto;
+        bottom: 0;
+      }
+
+      &::after {
+        content: "";
+      }
+    }
+  }
+
+  .card {
+    position: relative;
+    padding: 68px 21px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: $gray-light;
+    border-radius: 10px;
+    width: 296px;
+
+    &--large {
+      width: 624px;
+      padding-top: 37px;
+      gap: 16px;
+    }
+
+    &__img {
+      height: 218px;
+      width: 100%;
+
+      @media (max-width: $table) {
+        height: 212px;
+        margin-bottom: 5px;
+      }
+
+      &--large {
+        height: 245px;
+      }
+
+      & > * {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        @media (max-width: $table-h) {
+          object-position: 50% 82%;
+        }
+        @media (max-width: $table) {
+          object-position: 50% 100%;
+        }
+      }
+    }
+
+    &__schema {
+      display: block;
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      @media (max-width: $table-h) {
+        display: none;
+      }
+    }
+
+    &__info {
+      padding-inline: 9px;
+      height: calc(100% - 230px);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 22px;
+
+      @media (max-width: $table-h) {
+        justify-content: flex-end;
+      }
+
+      &--large {
+        width: 225px;
+      }
+    }
+
+    &__title {
+      margin-block: 0;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 1.3;
+    }
+
+    &__prices {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__price {
+      font-size: 18px;
+      line-height: 1.3;
+      color: $secondary;
+    }
+
+    &__old-price {
+      font-size: 16px;
+      line-height: 1.3;
+      color: $gray;
+      text-decoration: line-through;
+    }
+
+    &__discount {
+      padding-block: 7px;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 82px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 20px;
+      color: $white;
+      background-color: $secondary;
+
+      &::after {
+        position: absolute;
+        right: -10px;
+        top: 0;
+        content: "";
+        border-left: 10px solid $secondary;
+        border-top: 17px solid transparent;
+        border-bottom: 17px solid transparent;
+      }
+    }
+  }
+
+  &__btn {
+    @media (max-width: $table-m) {
+      padding: 17px 0;
+    }
+  }
+}

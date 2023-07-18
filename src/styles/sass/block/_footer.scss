@@ -1,0 +1,220 @@
+.footer {
+  padding: 22px 0;
+  background: $md-gray;
+  @media (max-width: $table) {
+    padding: 24px 0;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 26px 30px;
+    @media (max-width: $table-h) {
+      grid-template-columns: repeat(9, 1fr);
+    }
+    @media (max-width: $table) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 18px 30px;
+    }
+    @media (max-width: $table-m) {
+      grid-template-columns: 1fr;
+      grid-gap: 18px 30px;
+      justify-items: center;
+    }
+  }
+
+  &__logo {
+    grid-column-start: 1;
+    grid-column-end: 2 span;
+    order: 1;
+    outline: none;
+    @media (max-width: $table-m) {
+      max-width: 190px;
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+  }
+
+  &__social {
+    grid-column-start: 1;
+    grid-column-end: 2 span;
+    order: 3;
+    align-self: flex-end;
+    @media (max-width: $table) {
+      grid-column-start: 5;
+      grid-column-end: 2 span;
+      order: 2;
+      justify-content: flex-end;
+    }
+    @media (max-width: $table-m) {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      justify-content: center;
+    }
+  }
+
+  &__nav {
+    padding-top: 6px;
+    grid-column-start: 5;
+    grid-column-end: 8 span;
+    grid-row-start: 1;
+    grid-row-end: 2 span;
+    order: 2;
+    @media (max-width: $table-h) {
+      grid-column-start: 3;
+      grid-column-end: 7 span;
+    }
+    @media (max-width: $table) {
+      grid-row: auto;
+      grid-column-start: 1;
+      grid-column-end: 6 span;
+      order: 3;
+    }
+    @media (max-width: $table-m) {
+      padding-top: 9px;
+      flex-wrap: wrap;
+      grid-column-start: auto;
+      grid-column-end: auto;
+    }
+  }
+}
+
+.social {
+  @include listReset;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__link {
+    color: $gray;
+    position: relative;
+    display: block;
+    height: 30px;
+    width: 30px;
+    outline: none;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      background: $primary-light;
+      opacity: 0;
+      transition: opacity $transition;
+    }
+    &:focus {
+      &:after {
+        opacity: 1;
+      }
+      .social {
+        &__icon {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__icon {
+    width: 100%;
+    height: 100%;
+    fill: $gray;
+    position: relative;
+    z-index: 2;
+    transition: fill $transition;
+
+    &:hover {
+      fill: $primary;
+    }
+
+    &:active {
+      fill: $primary-shade;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__list {
+    @include listReset;
+
+    @media (max-width: $table-m) {
+      max-width: 47%;
+      width: 100%;
+
+      &:first-child,
+      &:nth-child(2) {
+        margin-right: 0;
+        margin-bottom: 26px;
+      }
+
+      &:nth-child(3),
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:first-child {
+      margin-right: -21px;
+      @media (max-width: $table) {
+        margin-right: -18px;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-right: 12px;
+      @media (max-width: $table) {
+        margin-right: 15px;
+      }
+    }
+    &:last-child {
+      @media (max-width: $table) {
+        margin-right: 2px;
+      }
+    }
+  }
+
+  &__item {
+    font-size: 16px;
+    line-height: 1;
+    color: $black;
+
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $gray;
+    font-size: 14px;
+  }
+}
+
+.copyright {
+  background: $gray-light;
+
+  &__container {
+    color: $gray;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 14px;
+    line-height: 19px;
+    @media (max-width: $table) {
+      padding: 5px 0;
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

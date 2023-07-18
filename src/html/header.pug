@@ -1,0 +1,46 @@
+header.header
+  .container
+    .header__wrap
+      .header__region
+        span.header__text Ваш регион:
+        select.header__select
+          each value in ['Москва', 'Казань', 'Уфа', 'Пермь']
+            option(value= value)= value
+      a.header__phone.phone(href="tel:+74958854547" aria-label="Позвонить по телефону")
+        svg.phone__icon( width="20" height="20" )
+          use( xlink:href="images/sprite.svg#phoneHeader" )
+        |  +7 (495) 885-45-47
+      nav.header__menu-top.menu-top
+        ul.menu-top__list
+          each value, index in {'О компании' : 'about', 'Гарантия и возврат' : 'about', 'Корпоративным клиентам' : 'about', 'Дизайн-решение' : 'about'}
+            li.menu-top__item
+              a.menu-top__link.link.link--gray(href="/" + value + ".html")= index
+      a.header__logo(href="#")
+        img.header__img(src="images/logo.svg" alt="Логотип - Интернет магазина")
+      button.header__burger-menu.burger-menu
+        span.burger-menu__icon
+      nav.header__bottom-menu.bottom-menu
+        ul.bottom-menu__list
+          each value, index in {'Каталог' : 'catalog', 'Магазины' : 'catalog', 'Шоу-рум' : 'catalog', 'Доставка и оплата' : 'catalog', 'Дисконт' : 'catalog', 'Контакты' : 'catalog'}
+            li.bottom-menu__item
+              a.bottom-menu__link(href="/" + value + ".html")= index
+      .header__forms
+        form.header__form
+          svg.header__icon(width="20" height="20")
+            use( xlink:href="images/sprite.svg#search" )
+          input.header__search(type="text" placeholder="Я хочу купить..." aria-label="Введите запрос")
+          button.header__btn-search(aria-label="Поиск")
+            span.header__btn-right
+        select.header__filter.filter
+          each value in ['Категория', 'Диваны', 'Кресла', 'Пуфы', 'Кровати', 'Тумбы', 'Комоды', 'Стулья', 'Столы', 'Аксессуары']
+            option(value= value)= value
+      .header__btn
+        button.header__profile(aria-label="Кнопка профиля")
+          svg.header__user
+            use( xlink:href="images/sprite.svg#profile" )
+        button.header__cart(aria-label="Корзина")
+          span.header__cart-sum 0
+          svg.header__cart-icon
+            use( xlink:href="images/sprite.svg#cart" )
+
+

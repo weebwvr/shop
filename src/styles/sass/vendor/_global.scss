@@ -1,0 +1,71 @@
+*, :after, ::before, {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  color: $black;
+  min-height: 100vh
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  display: block;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $container;
+  padding: 0 15px;
+}
+
+.title {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+}
+.container__title {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 400;
+  color: $black;
+}
+
+@media (max-width: $table-h) {
+  .container {
+    padding: 0 36px;
+  }
+}
+
+@media (max-width: $table) {
+  .container {
+    padding: 0 72px;
+  }
+}
+
+@media (max-width: $table-m) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .container {
+    padding: 0 12px;
+    &__title {
+      @include fs24;
+      line-height: 24px;
+    }
+  }
+}

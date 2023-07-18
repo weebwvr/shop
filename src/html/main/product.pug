@@ -1,0 +1,37 @@
+section.product.container
+  .swiper.product__photo
+    ul.swiper-wrapper.product__list
+      each photo in [1, 2, 3, 4, 5]
+        li.slide.product__photo-slide.swiper-slide
+          picture.slide__picture
+            img.slide__img(src=`images/product-photo-${photo}.png` alt=`Фото ${photo}`)
+  .swiper.product__thumbs
+    ul.swiper-wrapper.product__list
+      each photo in [1,2,3,4,5]
+        li.slide.product__thumbs-slide.swiper-slide
+          picture.slide__picture
+            img.slide__img.slide__img--thumbs(src=`images/product-photo-${photo}.png` alt=`Фото ${photo}`)
+  .product__info
+    .product__rating
+      span.product__rating-text= '4,8'
+    h2.product__title Диван тканевый прямой “D-31”
+    p.product__subtitle Мини 120 см без ящика Stark синий (Рогожка)
+    p.product__price 28 490 руб
+    button.btn.btn--primary.product__btn-sail Купить в один клик
+    button.btn.product__btn-add-to-cart Добавить в корзину
+  .product__description
+    p.product__description-title Опорный механизм
+    p.product__description-text Опорный механизм напоминает пантограф, к которому добавили дополнительную секцию. У опорного дивана сиденье «выпрыгивает» вперёд и вытаскивает вторую часть спального места. Заключительный штрих — опустить спинку.
+    p.product__description-text Этот механизм не портит пол и не боится ковров. Требуется чуть больше силы, чтобы разложить диван, но подросток справится.
+  .product__schemes
+    each number in [1, 2]
+      picture.product__scheme
+        source(srcset=`images/product-scheme-${number}-1024px.png` media='(min-width: 1310px)')
+        source(srcset=`images/product-scheme-${number}-768px.png` media='(min-width: 992px)')
+        img(src=`images/product-scheme-${number}.png` alt=`Слайд ${number}`)
+  ul.product__attributes
+    each attr in [{ name: 'Гарантия', value: '18 месяцев'}, { name: 'Артикул', value: 'AAA41269004'},{ name: 'Длина', value: '163 см'},{ name: 'Высота', value: '90 см'},{ name: 'Глубина', value: '108 см'},{ name: 'Спальное место', value: '200 см х 125 см'},{ name: 'Высота посадки', value: '45 см'},{ name: 'Механизм', value: 'Опорный'},{ name: 'Тип обивки', value: 'Рогожка'},{ name: 'Цвет', value: 'Синий'},{ name: 'Наполнитель', value: 'Независимый пружинный блок'},{ name: 'Материал каркаса', value: 'Металл. рама с дерев. латами'},{ name: 'Количество мест', value: 'Двухместные'},{ name: 'Категория', value: 'Прямые тканевые диваны'},{ name: 'Возврат', value: 'Условия'},]
+      li.attribute.product__attribute
+        span.attribute__name= attr.name
+        span.attribute__dotted
+        span.attribute__value= attr.value

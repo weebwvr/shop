@@ -1,0 +1,38 @@
+.link {
+  &--gray {
+    color: $gray;
+    outline: none;
+    z-index: 1;
+    position: relative;
+    transition: color $transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      right: -10px;
+      z-index: -1;
+      height: 105%;
+      background: $white-shade;
+      opacity: 0;
+      transition: opacity $transition;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:active {
+      color: $primary-shade;
+    }
+
+    &:focus {
+      color: $primary-shade;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+section.breadcrumbs
+  .container
+    ul.breadcrumbs__list
+      each data in breadcrumbsLinks
+        li.breadcrumbs__item
+          a.breadcrumbs__link(href=`${data.link}`)= data.title

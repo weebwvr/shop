@@ -1,0 +1,8 @@
+article.card__item.card__item--rating
+  span.card__rating= data.rating
+  img.card__img(src=`images/${data.img}.png` alt=`${data.name}`)
+  .card__discription
+    h3.card__title.card__title--rating= data.name
+    .card__price.card__price-modification
+      span.card__price-rating= data.price
+    a.card__link.btn.btn--border(href="product.html") Купить

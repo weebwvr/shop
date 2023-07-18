@@ -1,0 +1,26 @@
+.noUi {
+  &-connect {
+    background: $primary;
+  }
+  &-handle {
+    border: none;
+    background: 0 0;
+    box-shadow: none;
+    cursor: pointer;
+    &::before {
+      left: 10.5px;
+      top: 7px;
+      content: '';
+      background: 0 0;
+      height: auto;
+      width: auto;
+      border-bottom: 13px solid $primary;
+      border-right: 6.5px solid transparent;
+      border-left: 6.5px solid transparent;
+      border-radius: 3px;
+    }
+    &::after {
+      content: none;
+    }
+  }
+}

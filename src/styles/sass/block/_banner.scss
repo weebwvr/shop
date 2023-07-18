@@ -1,0 +1,67 @@
+.banner {
+  &__card {
+    @include br10;
+    background-color: $black;
+  }
+
+  &__description {
+    padding: 28px 30px 27px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Playfair Display';
+    font-weight: 900;
+    line-height: 1.2;
+    @include fs24;
+    margin: 0;
+    color: $gold;
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.4;
+    font-size: 16px;
+    max-width: 200px;
+    margin-bottom: 8px;
+    color: $white;
+  }
+
+  &__link {
+    display: flex;
+    @include fs16fw700;
+    line-height: 30px;
+    justify-content: space-between;
+    max-width: 108px;
+    outline: none;
+    margin-top: auto;
+    align-items: center;
+    color: $primary;
+
+    &-arrow {
+      display: block;
+      position: relative;
+      min-width: 22px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid $primary;
+      background-color: transparent;
+      transition: border $transition, background-color $transition;
+
+      &:before {
+        content: '';
+        position: absolute;
+        border-right: 2px solid $primary;
+        border-top: 2px solid $primary;
+        transform: rotate(45deg);
+        width: 6px;
+        height: 6px;
+        top: 6px;
+        left: 5px;
+        transition: border $transition;
+      }
+    }
+  }
+}

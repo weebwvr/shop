@@ -1,0 +1,41 @@
+.attribute {
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+  &__name {
+    color: $gray;
+    font-size: 14px;
+    @media (max-width: $mobile) {
+      font-size: 10px;
+      margin-bottom: 5px;
+      line-height: 10px;
+    }
+  }
+  &__dotted {
+    flex-grow: 2;
+    border-bottom: 1px dotted $gray;
+    margin: 0 5px;
+    transform: translateY(-2px);
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__value {
+    max-width: 296px;
+    min-width: 216px;
+    width: 48vw;
+    font-size: 14px;
+    @media (max-width: $table-h) {
+      max-width: 217px;
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+      max-width: 100%;
+      min-width: auto;
+      line-height: 14px;
+    }
+  }
+}

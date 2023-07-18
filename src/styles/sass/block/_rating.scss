@@ -1,0 +1,49 @@
+.rating {
+  margin-bottom: 71px;
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    .card__img {
+      margin-bottom: 14px;
+      height: 125px;
+      object-fit: contain;
+      object-position: bottom;
+      @media (max-width: $table-h) {
+        margin-bottom: 16px;
+      }
+      @media (max-width: $table) {
+        margin-bottom: 20px;
+      }
+      @media (max-width: $mobile) {
+        height: 73px;
+        object-position: center;
+        margin-bottom: 1px;
+      }
+    }
+  }
+  &__title {
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 4 span;
+    margin-bottom: 27px;
+    @media (max-width: $table) {
+      margin-bottom: 28px;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: 27px;
+    }
+  }
+  &__btn {
+    max-width: 296px;
+    margin: 0 auto;
+    @include pv19;
+    @media (max-width: $table-h) {
+      padding: 19px 0;
+    }
+    &-card {
+      @media (max-width: $table) {
+        @include pv10;
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+.hero {
+  padding-top: 17px;
+  margin-bottom: 72px;
+  &__slider {
+    width: 100%;
+    position: relative;
+  }
+  &__title {
+    margin: 0;
+    font-size: 48px;
+    line-height: 65px;
+    color: $gray;
+    font-weight: 700;
+    max-width: 600px;
+    margin-bottom: 50px;
+
+    &-white {
+      color: $white;
+    }
+  }
+}
+
+.swiper {
+  &-slide {
+    &-hero {
+      max-height: 400px;
+      background-repeat: no-repeat;
+      padding: 80px 0;
+    }
+
+    &-one {
+      background: url('../images/hero-1.jpg') center/cover no-repeat;
+    }
+
+    &-two {
+      background: url('../images/hero-2.jpg') center/cover no-repeat;
+    }
+
+    &-three {
+      background: url('../images/hero-3.jpg') center/cover no-repeat;
+    }
+  }
+  &-pagination {
+    &-bullet {
+      width: 14px;
+      height: 14px;
+      background: $black;
+      opacity: .3;
+      &-active {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.swiper-pagination.swiper-pagination-hero{
+  bottom: 19px;
+}
+
+@media (max-width: $table-h) {
+  .hero {
+    padding-top: 17px;
+  }
+  .swiper {
+    &-slide {
+      &-one {
+        background: url('../images/hero-1-1024.jpg') center/cover no-repeat;
+      }
+
+      &-two {
+        background: url('../images/hero-2-1024.jpg') center/cover no-repeat;
+      }
+
+      &-three {
+        background: url('../images/hero-3-1024.jpg') center/cover no-repeat;
+      }
+    }
+  }
+}
+
+@media (max-width: $table) {
+  .swiper {
+    &-slide {
+      &-one {
+        background: url('../images/hero-1-768.jpg') center/cover no-repeat;
+      }
+
+      &-two {
+        background: url('../images/hero-2-768.jpg') center/cover no-repeat;
+      }
+
+      &-three {
+        background: url('../images/hero-3-768.jpg') center/cover no-repeat;
+      }
+    }
+  }
+}
+
+@media (max-width: $table-m) {
+  .hero {
+    padding-top: 13px;
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      padding: 6px 17px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .hero {
+    margin-bottom: 46px;
+    &__slider {
+      padding-bottom: 0;
+    }
+    &__title {
+      margin-bottom: 150px;
+    }
+    &__button {
+      width: 100%;
+      max-width: none;
+      @include pv19;
+    }
+    &__btn {
+      max-width: 100%;
+    }
+  }
+
+  .swiper {
+    &-slide {
+      &-hero {
+        padding: 24px 0;
+      }
+      &-one {
+        background: url('../images/hero-1-320.jpg') top center/100% 64% no-repeat;
+      }
+
+      &-two {
+        background: url('../images/hero-2-320.jpg') top center/100% 64% no-repeat;
+      }
+
+      &-three {
+        background: url('../images/hero-3-320.jpg') top center/100% 64% no-repeat;
+      }
+    }
+    &-pagination {
+      &-bullet {
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 4px;
+  }
+  .swiper-pagination.swiper-pagination-hero{
+    bottom: 36.4%;
+  }
+}

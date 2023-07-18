@@ -1,0 +1,28 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &__item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  &__input {
+    border: 1px solid transparent;
+    @include br10;
+    padding: 6px 17px;
+    background: $gray-light;
+    font-size: 16px;
+    line-height: 40px;
+    width: 100%;
+    outline: none;
+    transition: border $transition, background $transition;
+    &:hover {
+      background-color: $md-gray;
+    }
+    &:focus {
+      border-color: $primary;
+      background-color: $white-light;
+    }
+  }
+}

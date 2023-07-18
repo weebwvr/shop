@@ -1,0 +1,37 @@
+.modal
+  .modal__container.container.modal__container--buy
+    .modal__window.modal__window--buy
+      button.modal__close-btn
+        span.modal__close-icon
+      h2.modal__title Купить в один клик
+      p.modal__description Чтобы оформить заказ — заполните формы ниже и наш менеджер свяжется с вами в течении часа.
+      form.modal__form.form
+        .modal__input-wrapper.form__item
+          input.modal__input.form__input(placeholder="Как вас зовут?" name="name" type="text" data-validate-field="name")
+        .modal__input-wrapper.form__item
+          input.modal__input.form__input(placeholder="Ваш телефон" name="phone" type="tel" data-validate-field="tel" data-validate-rules="phone")
+        button.btn.btn--primary.modal__btn(type="submit") Отправить
+        label.modal__label.custom.custom--check-label(for="politic")
+          input.modal__check.custom.custom--check(type="checkbox" checked="checked" id="politic")
+          span.modal__check-description.custom.custom--checkbox Принимаю
+            a.modal__link(href='#') пользовательское соглашение
+  .modal__container.container.modal__container--success
+    .modal__window.modal__window--success
+      button.modal__close-btn
+        span.modal__close-icon
+      p.modal__text.modal__text--success Спасибо, мы вам перезвоним!
+  .modal__container.container.modal__container--photo
+    .modal__window.modal__window--photo
+      button.modal__close-btn
+        span.modal__close-icon
+      .swiper.modal__photo-product
+        ul.swiper-wrapper.modal__photo-list
+          each photo in [1, 2, 3, 4, 5]
+            li.slide.modal__photo-slide.swiper-slide
+              img.slide__img(src=`images/product-photo-${photo}.png` alt=`Фото ${photo}`)
+      .modal__thumbs-container
+        .swiper.modal__thumbs-product
+          ul.swiper-wrapper.modal__thumbs-list
+            each photo in [1,2,3,4,5]
+              li.slide.modal__thumbs-slide.swiper-slide
+                img.slide__img.slide__img--thumbs.modal__thumbs-img(src=`images/product-photo-${photo}.png` alt=`Фото ${photo}`)

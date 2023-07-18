@@ -1,0 +1,75 @@
+.special {
+  margin-bottom: 73px;
+
+  &__container {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-areas:
+      "title btn"
+      "slider slider";
+    grid-template-columns: 1fr 77px;
+    @media (max-width: $mobile) {
+      grid-template-areas:
+        "title"
+        "slider"
+        "btn";
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    grid-area: title;
+    @media (max-width: $mobile) {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    grid-area: slider;
+    @media (max-width: $mobile) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: $gray-light;
+    @include br10;
+  }
+
+  &__picture {
+    margin: -30px -30px 28px;
+    @media (max-width: $table-h) {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 37px;
+    padding: 0;
+    @include fs24;
+    font-weight: 400;
+    line-height: 33px;
+    color: $black;
+    @media (max-width: $table-h) {
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: $mobile) {
+      margin-bottom: 29px;
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    @media (max-width: $mobile) {
+      padding: 17px 0;
+    }
+  }
+}

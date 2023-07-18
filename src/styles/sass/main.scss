@@ -1,0 +1,36 @@
+@import "mixin/mixin";
+@import "vendor/color";
+@import "vendor/normalize";
+@import "vendor/varibles";
+@import "vendor/font";
+@import "vendor/global";
+@import "vendor/custom";
+
+@import "connect/choise";
+@import "connect/noUiConnect";
+
+@import "component/btn";
+@import "component/card";
+@import "component/link";
+@import "component/pagination";
+@import "component/form";
+
+@import "block/header";
+@import "block/hero";
+@import "block/oferta";
+@import "block/rating";
+@import "block/promo";
+@import "block/category";
+@import "block/special";
+@import "block/contact";
+@import "block/footer";
+@import "block/breadcrumbs";
+@import "block/catalog";
+@import "block/filter";
+@import "block/banner";
+@import "block/product";
+@import "block/slide";
+@import "block/attribute";
+@import "block/alike";
+
+@import "component/modal";
